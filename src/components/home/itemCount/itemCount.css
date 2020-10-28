@@ -1,0 +1,27 @@
+.div-item{
+    border: 1px solid grey;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+.boton{
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    border: 1px solid grey;
+}
+.masMenos{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 50%;
+}
+.agregarCarrito{
+    width: 80%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5%;
+    margin-bottom: 20px;
+}

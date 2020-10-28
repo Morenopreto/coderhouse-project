@@ -1,0 +1,17 @@
+#ul-navBar{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    padding: 20px 100px;
+
+    background-color: rgba(0, 0, 0, .85);
+}
+#ul-navBar li {
+    list-style: none;
+
+    margin: 0 10px;
+
+    color: #999;
+    font-weight: bold;
+}
