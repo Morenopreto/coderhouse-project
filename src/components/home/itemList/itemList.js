@@ -35,7 +35,7 @@ class ItemList extends React.Component {
             
                 <ul className="itemListUl">
                     {this.state.lista.map((item,key) => (
-                        (<Item key={key} id={item.name} name={item.name} price={item.price} max={item.max} min={item.min} initial={item.initial}  />)
+                        (<Item key={key} id={item.id} name={item.name} price={item.price} max={item.max} min={item.min} initial={item.initial}  />)
                     ))}
                 </ul>
             
