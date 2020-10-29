@@ -1,0 +1,7 @@
+.itemListUl{
+    width: 80%;
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}

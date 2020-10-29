@@ -1,27 +1,55 @@
-.div-item{
-    border: 1px solid grey;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+.div-item-count {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: 10px;
+}
+.div-boton {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px;
+  background-color: transparent;
+  font-size: 23px;
+}
+.div-boton p {
+  margin: 0;
+}
+.masMenosBoton {
+  background-color: transparent;
+  border-radius: 50%;
+  width: 0.7em;
+  height: 0.7em;
+  display: flex;
+  align-items: center;
+}
+.masMenosBoton:focus {
+  outline: none;
+}
+.masMenosBoton:active {
+  background-color: teal;
+}
+.masMenosBoton svg:active {
+  color: white;
+}
+.masMenosBoton:hover,
+.agregarCarrito:hover {
+  color: teal;
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+.agregarCarrito:hover {
+  background-color: teal;
+  color: white;
+}
 
-}
-.boton{
-    text-align: center;
-    background-color: transparent;
-    color: black;
-    border: 1px solid grey;
-}
-.masMenos{
-    width: 30px;
-    height: 30px;
-    font-size: 20px;
-    border-radius: 50%;
-}
-.agregarCarrito{
-    width: 80%;
-    height: 30px;
-    font-size: 20px;
-    border-radius: 5%;
-    margin-bottom: 20px;
+.agregarCarrito {
+  width: 50%;
+  height: 30px;
+  font-size: 14px;
+  text-align: center;
 }
