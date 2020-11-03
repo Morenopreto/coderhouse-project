@@ -1,0 +1,55 @@
+.div-item-count {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 85%;
+  margin: 10px;
+}
+.item-div .div-item-count {
+  justify-content: space-around;
+}
+.modal-footer .div-item-count {
+  justify-content: space-between;
+}
+.div-boton {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  align-items: center;
+}
+.modal-footer .div-boton {
+  padding-left: 67px;
+  font-size: 29px;
+  width: 200px;
+  justify-content: space-between;
+}
+.item-div .div-boton {
+  justify-content: space-around;
+  width: 80%;
+  background-color: transparent;
+  font-size: 29px;
+  margin-bottom: 25px;
+}
+.div-boton p {
+  margin: 0;
+}
+.masMenosBoton {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.masMenosBoton:focus {
+  outline: none;
+}
+.masMenosBoton:active {
+  background-color: teal;
+}
+.modal-body ul{
+  list-style: none;
+  display: flex;
+  flex-flow: column wrap;
+  padding: 0 35px;
+}
