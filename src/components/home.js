@@ -1,13 +1,12 @@
 import React from 'react';
-import './home.css';
-import ItemList from './itemList/itemList'
+import './css/home.css';
+import ItemList from './itemList'
 
 const Home = (props) => {
     return (
         <div className='home-div'>
             <p>{props.greeting}</p>
             <div className="itemListDiv">
-            <ItemList/>
             </div>
         </div>
     )

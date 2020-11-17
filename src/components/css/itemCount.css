@@ -1,9 +1,10 @@
 .div-item-count {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-evenly;
   align-items: center;
-  width: 85%;
-  margin: 10px;
+  width: 50%;
+  margin: 10px 25%;
 }
 .item-div .div-item-count {
   justify-content: space-around;
@@ -16,6 +17,8 @@
   flex-flow: row wrap;
   text-align: center;
   align-items: center;
+  justify-content: space-between;
+  width: 100px;
 }
 .modal-footer .div-boton {
   padding-left: 67px;
