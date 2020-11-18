@@ -31,7 +31,7 @@ function Item({ max, min, id, name, price, detalle, initial, lista }) {
                 <li>price: {price}$</li>
             </ul>
 
-            <ItemCount disminuir={disminuir} sumar={sumar} contador={contador} max={max} min={min} initial={initial} />
+            <ItemCount disminuir={disminuir} sumar={sumar} contador={contador} max={max} min={min} initial={initial} name={name} />
 
             <Link to={{
                 pathname: `/productos/${id}`,

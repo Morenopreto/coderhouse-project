@@ -7,9 +7,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ItemList from './components/itemList';
 import Cart from './components/carrito';
 import ItemDetailContainer from './components/itemDetailContainer';
+import CartProvider from './context/globalContext'
 function App() {
   return (
-    
+    <CartProvider>
       <BrowserRouter>
         <div className="App">
           <NavBar />
@@ -26,7 +27,7 @@ function App() {
         </div>
 
       </BrowserRouter>
-    
+    </CartProvider>
   );
 }
 

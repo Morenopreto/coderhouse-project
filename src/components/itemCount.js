@@ -5,10 +5,10 @@ import {CartContext} from '../context/globalContext'
 
 
 
-function ItemCount({ max, min, src, sumar, disminuir, contador }) {
+function ItemCount({ max, min, src, sumar, disminuir, contador,id,name }) {
 
     const cartByContext = React.useContext(CartContext)
-    console.log(cartByContext)
+    
     return (
 
 
@@ -22,10 +22,10 @@ function ItemCount({ max, min, src, sumar, disminuir, contador }) {
                 <Button className='masMenosBoton' pill="true" variant="info" onClick={disminuir} max={max} min={min}>
                     -
                 </Button>
-                <Button variant="primary" onClick={cartByContext.comprar}>
+                <Button variant="primary" onClick={()=>cartByContext.comprar(contador,name)}>
                     Comprar {`${(contador > 0) ? contador : ''}`}
                 </Button>
-                <p>prueba {cartByContext.carritoState}</p>
+                
             </div>
         </div>
 
