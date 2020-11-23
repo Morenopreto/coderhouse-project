@@ -9,6 +9,7 @@ import Footer from './components/footer';
 import Cart from './components/carrito';
 import ItemDetailContainer from './components/itemDetailContainer';
 import CartProvider from './context/globalContext'
+
 function App() {
   return (
     <CartProvider>

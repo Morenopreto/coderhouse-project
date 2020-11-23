@@ -19,7 +19,7 @@ function NavBar() {
       <span className='quart first'>
         <ul id='ul-navBar'>
           <li className='li-navBar'><NavLink className='link' to='/'>Inicio</NavLink></li>
-          <li className='li-navBar' onClick={cartByContext.getProductos()}><NavLink className='link' to='/productos'>Productos</NavLink></li>
+          <li className='li-navBar'><NavLink className='link' to='/productos'>Productos</NavLink></li>
         </ul>
       </span>
       <span className='quart second'><img className='logo' src={logo} alt='logo-frodas-burger' /></span>

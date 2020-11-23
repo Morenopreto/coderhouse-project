@@ -8,7 +8,6 @@ import congeladas from '../assets/congeladas.jpg'
 
 function Item({ lista }) {
 
-    // let { id, name, price, max, min, initial } = lista;
     let { id, title, price, max, min, initial } = lista;
     console.log('itemList')
     const [contador, setContador] = useState(0)

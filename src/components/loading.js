@@ -9,6 +9,7 @@ import './css/loading.css';
 function Loading() {
     return (
         <div className="loading">
+            <h1>Loading <span>.</span><span>.</span><span>.</span></h1>
             <img className="arriba tamano" src={PanArriba} alt="loadingImg" />
             <img className="cebolla" src={cebolla} alt="loadingImg" />
             <img className="burger tamano" src={burger} alt="loadingImg" />

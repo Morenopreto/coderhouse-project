@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, {useContext } from 'react';
 import Item from './items';
 import Loading from './loading';
 import './css/itemList.css';
@@ -9,7 +9,8 @@ import { CartContext } from '../context/globalContext'
 function ItemList() {
     const cartByContext = useContext(CartContext);
     let {lista} = cartByContext;
-    console.log('itemList')
+    console.log('lista')
+    console.log(lista)
     if (!lista) {
         return <div><Loading/></div>
     } else {

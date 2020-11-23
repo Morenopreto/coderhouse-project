@@ -5,6 +5,7 @@ import ItemCount from './itemCount';
 function ItemDetail({ sumar, disminuir, descripcion, max, min,id, contador, name, price }) {
 // function ItemDetail() {
     console.log('imteDetail')
+    
     // const cartByContext = useContext(CartContext);
     // let { lista } = cartByContext;
 
