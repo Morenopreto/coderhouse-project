@@ -3,7 +3,7 @@ import { CartContext } from '../context/globalContext'
 import './css/carrito.css'
 
 function Cart() {
-
+console.log('carrito')
     const cartByContext = useContext(CartContext)
 
     if (!cartByContext.carritoState.length) {

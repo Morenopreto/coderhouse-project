@@ -1,14 +1,16 @@
 import { React, useState } from 'react';
 // import ItemDetailContainer from './itemDetailContainer/itemDetailContainer';
 import ItemCount from './itemCount'
+import { Card } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import './css/items.css';
-import { Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import congeladas from '../assets/congeladas.jpg'
 
+function Item({ lista }) {
 
-// class Item extends React.Component {
-function Item({ max, min, id, name, price, detalle, initial, lista }) {
-
+    // let { id, name, price, max, min, initial } = lista;
+    let { id, title, price, max, min, initial } = lista;
+    console.log('itemList')
     const [contador, setContador] = useState(0)
     const sumar = () => {
 
@@ -17,33 +19,40 @@ function Item({ max, min, id, name, price, detalle, initial, lista }) {
         }
     }
     const disminuir = () => {
-        
+
         if (contador > min)
             setContador(contador - 1)
     }
 
 
     return (
-        <div className="item-div">
-            <ul className="itemUl">
-                <li>id: {id}</li>
-                <li>name: {name}</li>
-                <li>price: {price}$</li>
-            </ul>
+        <Card className="item-div">
+            <NavLink className="item-link" to={{
+                pathname: `/productos/${id}`
+            }}>
+                <span className='img-ctn'>
+                    <Card.Img className='item-img' variant="top" src={congeladas} />
+                </span>
+                <Card.Body className="cardBody">
+                    <ul className="itemUl">
+                        <li className='nombre'>{title}</li>
+                        <li className='precio'>${price}</li>
+                    </ul>
 
-            <ItemCount disminuir={disminuir} sumar={sumar} contador={contador} max={max} min={min} initial={initial} name={name} />
+                </Card.Body>
+            </NavLink>
+            <Card.Footer className='cardFooter'>
+                <ItemCount disminuir={disminuir} sumar={sumar} contador={contador} max={max} min={min} initial={initial} name={title} />
 
-            <Link to={{
-                pathname: `/productos/${id}`,
-                state: {
-                    lista: lista
-                }
-            }}><Button variant="secondary">
-                    Ver descripcion
-            </Button></Link>
+                {/* <Button variant="secondary">
+                        Ver descripcion
+                     </Button> */}
+
+            </Card.Footer>
 
             {/* <ItemDetailContainer disminuir={this.disminuir} sumar={this.sumar} detalle={detalle} max={max} min={min} contadorDeClick={this.state.contadorDeClick} name={name} price={price} /> */}
-        </div >
+        </Card >
+
     )
 
 }

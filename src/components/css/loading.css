@@ -1,0 +1,76 @@
+.loading {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 50px 30%;
+}
+.arriba {
+  /* position: absolute; */
+  transition: all 2s ease-in-out;
+  animation: arriba 3s infinite;
+}
+.abajo {
+  /* position: absolute; */
+  transition: all 2s ease-in-out;
+  animation: abajo 3s infinite;
+}
+.cebolla,
+.bacon {
+width: 42%;
+height: 42%;
+align-self: center;
+}
+.cebolla{
+    transition: all 2s ease-in-out;
+    animation: rotacionInv 2.5s infinite;
+}
+.bacon{
+    transition: all 2s ease-in-out;
+    animation: rotacionInv 2.5s infinite;
+}
+.burger{
+    transition: all 2s ease-in-out;
+    animation: rotacion 2.5s infinite;
+}
+.tamano {
+    height: 50%;
+    width: 50%;
+    align-self: center;
+  }
+
+@keyframes arriba {
+  0% {
+    transform: translate(0, -25px);
+  }
+  50% {
+    transform: translate(0, 17px);
+  }
+  100% {
+    transform: translate(0, -25px);
+  }
+}
+@keyframes abajo {
+  0% {
+    transform: translate(0, 25px);
+  }
+  50% {
+    transform: translate(0, -17px);
+  }
+  100% {
+    transform: translate(0, 25px);
+  }
+}
+@keyframes fantasma{
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@keyframes rotacion{
+    0%{transform: rotate(-7deg);}
+    50%{transform: rotate(7deg);}
+    100%{transform: rotate(-7deg)}
+}
+@keyframes rotacionInv{
+    0%{transform: rotate(7deg);}
+    50%{transform: rotate(-7deg);}
+    100%{transform: rotate(7deg)}
+}

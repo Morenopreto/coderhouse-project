@@ -4,11 +4,49 @@
     display: block;
     text-align: center;
     list-style: none;
+    margin: 0 10%;
 }
+
 .item-div{
     width: 30%;
-    padding: 0 20px;
     display: inline-flex;
     flex-flow: column wrap;
-    
+    max-width: 400px;
+}
+.item-link{
+    display: inline-flex;
+    flex-flow: column wrap;
+}
+.item-link:hover{
+    text-decoration: none;
+}
+.item-div:hover{
+    transition: box-shadow 0.3s ease 0s;;
+    box-shadow: rgba(46, 49, 49,0.4) 3px 3px 8px 5px;
+    border: 2px solid rgb(255, 255, 255);
+}
+.img-ctn{
+    height: 240px;
+    overflow: hidden;
+}
+.item-img{
+    transform: translate(0,-30px);
+    height: 130%;
+    width: 100%;
+    object-fit: cover;
+}
+.precio{
+    font-size: 15px;
+    font-weight: bold;
+    color: #e42528;
+    width: 100%;
+}
+.nombre{
+    font-size: 25px;
+    font-weight: bold;
+    color: #1a1a1a;
+    width: 100%;
+}
+.cardBody,.cardFooter{
+    max-height: 100px;
 }

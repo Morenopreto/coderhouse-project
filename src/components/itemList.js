@@ -1,37 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Item from './items';
+import Loading from './loading';
 import './css/itemList.css';
+import { CardDeck } from 'react-bootstrap';
+import { CartContext } from '../context/globalContext'
+
 
 function ItemList() {
-    const [lista, setLista] = useState()   
-
-    // const creaLista = () => {
-    new Promise((resolve, reject) => {
-
-        setTimeout(() => {
-            resolve([
-                { 'id': 1, 'price': 200, 'name': "Remera barata", 'max': 3, 'min': 1, 'initial': 0, 'detalle': 'Remera de polyester color rojo' },
-                { 'id': 2, 'price': 500, 'name': "Remera medio", 'max': 4, 'min': 2, 'initial': 0, 'detalle': 'Remera de polyester color azul' },
-                { 'id': 3, 'price': 1200, 'name': "Remera cara", 'max': 7, 'min': 3, 'initial': 0, 'detalle': 'Remera de polyester color amarillo' }])
-        }, 1000)
-
-    })
-        .then(response => {
-            setLista(response)
-        })
-
-        .catch(err => { console.log(err) })
-    // }
+    const cartByContext = useContext(CartContext);
+    let {lista} = cartByContext;
+    console.log('itemList')
     if (!lista) {
-        return <div>Loading</div>
+        return <div><Loading/></div>
     } else {
 
         return (
-            <ul className="itemListUl">
+            // <ul className="itemListUl">
+            <CardDeck className='itemListUl'>
+                <h1>Productos</h1>
                 {lista?.map((item, key) => (
-                    (<Item key={key} id={item.id} name={item.name} price={item.price} max={item.max} min={item.min} initial={item.initial} detalle={item.detalle} />)
+                    (<Item key={key} lista={item} />)
                 ))}
-            </ul>
+            </CardDeck>
+            // {/* </ul> */}
         )
     }
 }

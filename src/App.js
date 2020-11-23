@@ -5,6 +5,7 @@ import Home from './components/home';
 import './components/css/general.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ItemList from './components/itemList';
+import Footer from './components/footer';
 import Cart from './components/carrito';
 import ItemDetailContainer from './components/itemDetailContainer';
 import CartProvider from './context/globalContext'
@@ -24,6 +25,7 @@ function App() {
 
             <Route path='/carrito'><Cart /></Route>
           </Switch>
+          <Footer />
         </div>
 
       </BrowserRouter>
