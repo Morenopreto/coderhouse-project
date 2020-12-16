@@ -1,6 +1,12 @@
-*{
-    border: 0;
-    padding: 0;
-    margin:0;
-    box-sizing: border-box;    
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: mono45-headline, monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+.inline {
+  display: inline;
 }

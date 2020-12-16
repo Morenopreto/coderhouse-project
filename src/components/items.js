@@ -1,19 +1,22 @@
-import { React, useState } from 'react';
+import { React, useState, useContext } from 'react';
 // import ItemDetailContainer from './itemDetailContainer/itemDetailContainer';
 import ItemCount from './itemCount'
 import { Card } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+import { ProductContext } from '../context/globalContext'
 import './css/items.css';
-import congeladas from '../assets/congeladas.jpg'
+
 
 function Item({ lista }) {
-
-    let { id, title, price, max, min, initial } = lista;
-    console.log('itemList')
+    
+    let { id, title, price, stock, min, descripcion, source } = lista;
+    const { getById } = useContext(ProductContext);
+    const {id_categories} = useParams()
     const [contador, setContador] = useState(0)
+
     const sumar = () => {
 
-        if (contador < max) {
+        if (contador < stock) {
             setContador(contador + 1)
         }
     }
@@ -25,12 +28,13 @@ function Item({ lista }) {
 
 
     return (
-        <Card className="item-div">
+        <Card className="item-div" onClick={() => getById(id)}>
             <NavLink className="item-link" to={{
-                pathname: `/productos/${id}`
+                pathname: `/categories/${id_categories}/${id}`
+                // pathname: `/productos/${id}`
             }}>
                 <span className='img-ctn'>
-                    <Card.Img className='item-img' variant="top" src={congeladas} />
+                    <Card.Img className='item-img' variant="top" src={source} alt={`imagen-${title}`} />
                 </span>
                 <Card.Body className="cardBody">
                     <ul className="itemUl">
@@ -41,15 +45,9 @@ function Item({ lista }) {
                 </Card.Body>
             </NavLink>
             <Card.Footer className='cardFooter'>
-                <ItemCount disminuir={disminuir} sumar={sumar} contador={contador} max={max} min={min} initial={initial} name={title} />
-
-                {/* <Button variant="secondary">
-                        Ver descripcion
-                     </Button> */}
+                <ItemCount disminuir={disminuir} sumar={sumar} setContador={setContador} contador={contador} stock={stock} min={min} name={title} id={id} price={price} descripcion={descripcion} source={source} />
 
             </Card.Footer>
-
-            {/* <ItemDetailContainer disminuir={this.disminuir} sumar={this.sumar} detalle={detalle} max={max} min={min} contadorDeClick={this.state.contadorDeClick} name={name} price={price} /> */}
         </Card >
 
     )

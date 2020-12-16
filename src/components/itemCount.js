@@ -1,32 +1,30 @@
-import React from 'react';
-import './css/itemCount.css';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
-import { CartContext } from '../context/globalContext'
+import { CartContext } from '../context/cartContext';
+import './css/itemCount.css';
 
 
 
-// function ItemCount() {
-// function ItemCount({ max, min, src, sumar, disminuir, contador, id, name }) {
-function ItemCount({ max, min, src, contador, id, name, disminuir, sumar }) {
-    console.log('itemm count')
-    const cartByContext = React.useContext(CartContext);
-    const { comprar } = cartByContext;
+function ItemCount({ stock, min, contador, id, name, disminuir, sumar, setContador, price, descripcion, source }) {
+
+    const { addItem } = useContext(CartContext);
+
     return (
 
 
         <div className='div-item-count'>
             <div className='div-boton'>
 
-                <Button className='masMenosBoton' onClick={sumar} max={max} min={min}>
+                <Button className='masMenosBoton' onClick={sumar} stock={stock} min={min}>
                     +
                 </Button>
-                <p>{contador}</p>
+                <p>{Number(contador)}</p>
 
-                <Button className='masMenosBoton' onClick={disminuir} max={max} min={min}>
+                <Button className='masMenosBoton' onClick={disminuir} stock={stock} min={min}>
                     -
                 </Button>
             </div>
-            <Button variant="primary" onClick={() => comprar(contador, name)}>
+            <Button variant="primary" onClick={() => { addItem(contador, name, id, price, descripcion, source); setContador(0) }}>
                 Comprar {`${(contador > 0) ? contador : ''}`}
             </Button>
 

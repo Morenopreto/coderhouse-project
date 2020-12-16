@@ -1,0 +1,17 @@
+.imgDetailCtn {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+.itemDetailDiv{
+  padding-bottom: 35px;
+}
+.priceDetail{
+  font-size: 22px;
+  font-weight: bold;
+  width: 100%;
+}
+.imgDetail{
+  width: 100%;
+}

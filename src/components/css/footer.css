@@ -1,0 +1,20 @@
+.footer{
+    height: 16vh;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #282c34;
+    color: white;
+}
+.i-grid{
+    padding: 0 25px;
+    color: white;
+    font-size: 35px;
+    
+}
+.i-grid:hover{
+    color:#d37509;
+    font-size: 37px;
+}
+.rights{
+    font-size: 13px;
+}

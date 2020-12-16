@@ -10,5 +10,4 @@ const CartIcon = () => {
 </svg>
     </div>)
 };
-
 export default CartIcon;

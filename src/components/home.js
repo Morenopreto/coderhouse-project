@@ -4,12 +4,11 @@ import './css/home.css';
 import Carrousel from './carrousel'
 console.log('home')
 
-const Home = (props) => {
+const Home = () => {
     return (
         <div className='home-div'>
             <div className="back"></div>
             <Carrousel/>
-            <p>{props.greeting}</p>
             <div className="itemListDiv">
             </div>
         </div>

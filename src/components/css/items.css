@@ -1,52 +1,79 @@
-.itemUl{
-    font-size: 20px;
-    width: 80%;
-    display: block;
-    text-align: center;
-    list-style: none;
-    margin: 0 10%;
+
+.itemUl {
+  font-size: 20px;
+  width: 80%;
+  display: block;
+  text-align: center;
+  list-style: none;
+  margin: 0 10%;
 }
 
-.item-div{
-    width: 30%;
-    display: inline-flex;
-    flex-flow: column wrap;
-    max-width: 400px;
+.item-div {
+  width: 30%;
+  display: inline-flex;
+  flex-flow: column wrap;
+  max-width: 400px;
+  /* agregado */
+  min-width: 327px;
+  margin-bottom: 30px !important;
+  height: 328px;
+  overflow: hidden;
 }
-.item-link{
-    display: inline-flex;
-    flex-flow: column wrap;
+.item-link {
+  display: inline-flex;
+  flex-flow: column wrap;
 }
-.item-link:hover{
-    text-decoration: none;
+.item-link:hover {
+  text-decoration: none;
 }
-.item-div:hover{
-    transition: box-shadow 0.3s ease 0s;;
-    box-shadow: rgba(46, 49, 49,0.4) 3px 3px 8px 5px;
-    border: 2px solid rgb(255, 255, 255);
+.item-div:hover {
+  transition: box-shadow 0.3s ease 0s;
+  box-shadow: rgba(46, 49, 49, 0.4) 3px 3px 8px 5px;
+  border: 2px solid rgb(255, 255, 255);
 }
-.img-ctn{
-    height: 240px;
-    overflow: hidden;
+.item-div:hover > .cardFooter {
+  display: block;
+  transition: ease 1s;
+  max-height: 72px;
+  opacity: 1;
 }
-.item-img{
-    transform: translate(0,-30px);
-    height: 130%;
-    width: 100%;
-    object-fit: cover;
+.item-div:hover > .item-link > .img-ctn {
+  height: 180px;
+  transition: ease 0.5s;
 }
-.precio{
-    font-size: 15px;
-    font-weight: bold;
-    color: #e42528;
-    width: 100%;
+
+.img-ctn {
+  height: 240px;
+  overflow: hidden;
 }
-.nombre{
-    font-size: 25px;
-    font-weight: bold;
-    color: #1a1a1a;
-    width: 100%;
+.item-img {
+  transform: translate(0, -30px);
+  height: 130%;
+  width: 100%;
+  object-fit: cover;
 }
-.cardBody,.cardFooter{
-    max-height: 100px;
+.precio {
+  font-size: 21px;
+  font-weight: bold;
+  color: #e42528;
+  width: 100%;
 }
+.nombre {
+  font-size: 25px;
+  font-weight: bold;
+  color: #1a1a1a;
+  width: 100%;
+}
+.cardBody {
+  max-height: 72px;
+  padding: 0;
+}
+.cardFooter {
+  max-height: 0px;
+}
+.cardFooter {
+  /* agregado */
+  opacity: 0;
+  display: none;
+}
+

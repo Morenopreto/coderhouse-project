@@ -1,81 +1,90 @@
-import { createContext, useState, useRef, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { GetDBFirebase } from '../Tools/firebaseFactory'
-export const CartContext = createContext();
 export const ProductContext = createContext();
 
 
-const CartProvider = ({ children }) => {
+const ProductProvider = ({ children }) => {
 
-    // console.log(children)
-    let carro = useRef(0)
-    const [lista, setLista] = useState();
-    const [carritoState, setcarritoState] = useState([]);
-    const [carritoQty, setcarritoQty] = useState(0);
-    // const [contador, setContador] = useState(0)
-
-    //LLAMADO A LA API
     const DBconnection = GetDBFirebase();
+    const [lista, setLista] = useState();
+    const [categoriesState, setCategoriesState] = useState();
+    const [productoById, setproductoById] = useState();
+    const productos = DBconnection.collection('productos');
+    const categories = DBconnection.collection('categories');
 
 
     useEffect(() => {
-        console.log('efecto')
-        //comentar lineas 26 a 41 si linea 23 descomentada
-        setLista([1,2,3,4])
         
+        categories
+            .get()
+            .then((res) => {
+                if (res.size === 0) {
+                    console.log('No existe la coleccion')
+                } else {
+                    setCategoriesState(res.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+                    console.log(categoriesState)
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }, [])
 
-        // if (!lista) {
-        //     const productos = DBconnection.collection('productos')
-        //     productos
-        //         .get()
-        //         .then((res) => {
-        //             console.log('llamo')
-        //             if (res.size === 0) {
-        //                 console.log('No existe la coleccion')
-        //             } else {
-        //                 setLista(res.docs.map(doc => ({ ...doc.data(), id: doc.id })));
-        //             }
-        //         })
-        //         .catch((err) => {
-        //             console.log(err)
-        //         })
-        // }
+    const getById = (id) => {
 
+        productos.doc(id)
+            .get()
+            .then((doc) => {
 
-    })
-
-    //METHODS PARA CARRITO
-    const addItem = (contador, name) => {
-        let newEntry = {
-            count: contador,
-            name: name
-        }
-
-        setcarritoState([...carritoState, newEntry]);
-        actualizaQty(newEntry.count)
-
-    };
-    const actualizaQty = (data) => {
-        console.log(data);
-        carro.current += data;
-        setcarritoQty(carro.current);
+                if (!doc.exists) {
+                    console.log('No existe el id')
+                    setproductoById(null)
+                } else {
+                    setproductoById({ ...doc.data(), id: doc.id });
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
 
+    const getByCategorie = (categories) => {
+
+        setLista()
+        const filter = productos.where("categories", "==", categories);
+        filter
+            .get()
+            .then((result) => {
+
+                if (result.size === 0) {
+                    console.log('No existe la categoria')
+                    setLista(null)
+                } else {
+                    setLista(result.docs.map(doc => ({ ...doc.data(), id: doc.id})));
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+
+
     return (
-        <CartContext.Provider
+        <ProductContext.Provider
             value={{
-                comprar: addItem,
-                carritoState: carritoState,
-                qty: carritoQty,
-                lista: lista
+                lista: lista,
+                productoById: productoById,
+                getById: getById,
+                categoriesState: categoriesState,
+                getByCategorie: getByCategorie
             }}
         >
             {children}
-        </CartContext.Provider>
+        </ProductContext.Provider>
     );
 }
 
-
-// export default { CartProvider, ProductProvider };
-export default CartProvider;
+export default ProductProvider;
 
 

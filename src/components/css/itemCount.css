@@ -3,8 +3,8 @@
   flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
-  width: 50%;
-  margin: 10px 25%;
+  width: 90%;
+  margin: 0 5%;
 }
 .item-div .div-item-count {
   justify-content: space-around;
@@ -34,9 +34,9 @@
 }
 .item-div .div-boton {
   justify-content: space-between;
-  width: 65%;
+  width: 50%;
   font-size: 19px;
-  margin-bottom: 25px;
+  /* margin-bottom: 25px; */
   height: 30px;
 }
 .div-boton p {
@@ -56,14 +56,25 @@
 }
 .masMenosBoton:focus {
   outline: none;
+  background-color: #fff !important;
+  color: #1a1a1a !important;
+  border-color: #f5911e !important;
+  box-shadow: 0 0 0 0.2rem rgba(245,145,30,0.8);
 }
-.masMenosBoton:hover,.masMenosBoton:active {
-  background-color: #fff;
-  color: #1a1a1a
+.masMenosBoton:hover {
+  background-color: #fff !important;
+  color: #1a1a1a !important;
 }
-/* .masMenosBoton:active {
-  background-color: teal;
+/* .masMenosBoton:active{
+
 } */
+.masMenosBoton:active {
+  outline: none;
+  background-color: #fff !important;
+  color: #1a1a1a !important;
+  border-color: #f5911e !important;
+  box-shadow: 0 0 0 0.2rem rgba(245,145,30,0.8);
+}
 .modal-body ul{
   list-style: none;
   display: flex;
