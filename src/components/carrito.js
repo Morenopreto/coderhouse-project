@@ -6,18 +6,20 @@ import TrashCan from './icons/trashCan';
 import './css/carrito.css'
 
 function Cart() {
-    
+
     const { setOrder, limpiar, eliminaProducto, sumaUno, restaUno, buyerState, carritoState } = useContext(CartContext)
-    
+
     let total = 0;
+    // USED TO CALCULATE TOTAL
     carritoState?.map((item) => (total += item.price * item.count));
 
+    // IF THERE ARE NO ITEMS IN CART IT RENDERS
     if (!carritoState.length) {
         return (
-        <div className='carritoDiv'>No tenes items en el carrito..
-        <img src={Triste} alt='sad-empty-cart'/>
-        </div>
-        
+            <div className='carritoDiv'>No tenes items en el carrito..
+                <img src={Triste} alt='sad-empty-cart' />
+            </div>
+
         )
     } else {
 
@@ -30,7 +32,7 @@ function Cart() {
                         <>
                             <Card className='cardsCart' key={`${key}-Card`} style={{ width: '18rem' }}>
                                 <span className='imgCartSpan'>
-                                <Card.Img key={`${key}-Img`} className='imgCart' variant="top" src={item.source} />
+                                    <Card.Img key={`${key}-Img`} className='imgCart' variant="top" src={item.source} />
                                 </span>
                                 <Card.Body key={`${key}-CardBody`} className='gridCart'>
                                     <Card.Title className='tituloCart' key={`${key}-CardTitle`}>{item.name}</Card.Title>
