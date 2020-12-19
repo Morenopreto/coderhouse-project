@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../context/globalContext'
+import React from 'react';
 import ItemCount from './itemCount';
 import './css/itemDetail.css';
 function ItemDetail({ sumar, disminuir, descripcion, stock, min, id, contador, name, price,setContador, source }) {
-    
-    console.log(source)
+
+
     return (
         <div className='itemDetailDiv'>
             <div className='imgDetailCtn'>

@@ -13,11 +13,11 @@ function Cart() {
     // USED TO CALCULATE TOTAL
     carritoState?.map((item) => (total += item.price * item.count));
 
-    // IF THERE ARE NO ITEMS IN CART IT RENDERS
+    // IF THERE ARE NO ITEMS IN CART IT RENDERS A SLOGAN AND AN IMAGE ELSE RENDERS THE CART
     if (!carritoState.length) {
         return (
             <div className='carritoDiv'>No tenes items en el carrito..
-                <img src={Triste} alt='sad-empty-cart' />
+                <img className='sad-Empty' src={Triste} alt='sad-empty-cart' />
             </div>
 
         )
@@ -28,6 +28,7 @@ function Cart() {
                 <Button onClick={() => limpiar()}>Limpiar carrito</Button>
 
                 <ul className="carritoUl" >
+                {/* CARRITO STATE BRINGS INFORMATION ABOUT ITEMS IN CART FROM CONTEXT */}
                     {carritoState?.map((item, key) => (
                         <>
                             <Card className='cardsCart' key={`${key}-Card`} style={{ width: '18rem' }}>
@@ -36,7 +37,7 @@ function Cart() {
                                 </span>
                                 <Card.Body key={`${key}-CardBody`} className='gridCart'>
                                     <Card.Title className='tituloCart' key={`${key}-CardTitle`}>{item.name}</Card.Title>
-                                    <button className='buttonTrash' onClick={() => eliminaProducto(item.id, item.count)}><TrashCan /></button>
+                                    <button key={`${key}-button`} className='buttonTrash' onClick={() => eliminaProducto(item.id, item.count)}><TrashCan /></button>
 
                                     <Card.Text key={`${key}-CardText`} className='cartTextCart'>
                                         {item.descripcion}

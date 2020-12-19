@@ -24,7 +24,7 @@ function ItemCount({ stock, min, contador, id, name, disminuir, sumar, setContad
                     -
                 </Button>
             </div>
-            <Button variant="primary" onClick={() => { addItem(contador, name, id, price, descripcion, source); setContador(0) }}>
+            <Button variant="primary" disabled={!contador} onClick={() => { addItem(contador, name, id, price, descripcion, source); setContador(0) }}>
                 Comprar {`${(contador > 0) ? contador : ''}`}
             </Button>
 

@@ -23,4 +23,12 @@ Automaticamente deberia abrirse en su navegador [http://localhost:3000].
 En caso que esperado un tiempo prudencial, no se haya abierto copie la direccion en el navegador.
 
 ## Composicion de FIREBASE
-Firebase se encuentra compuesto por
+Firebase se encuentra compuesto por tres colecciones.
+# 1) CATEGORIES
+Categories incluye actualmente 2. Los documentos dentro de categories se muestran en la seccion categorias (clickeando categorias en el navbar) o al hacer hover en el boton categorias del navbar.
+Cada una de los documentos dentro de categories tiene un campo name y un campo source de donde se alimentan las imagenes de las categorias mostradas.
+# 2) ORDERS
+Orders incluye todas las ordenes/compras que fueron realizadas por los usuarios. Se crean con un id automatico y se nutren de 3 campos, buyer( con el mail, nombre y telefono del cliente), items (Cantidad, id, nombre y precio) y por ultimo el total de la compra.
+
+# 3) PRODUCTOS
+Productos incluye todos los productos que se encuentran cargados. Cada producto se crea con un id automatico y tiene los campos categories, descripcion, detailSource (muestra la imagen en detalle del producto), min, price, source(muestra la imagen del producto), stock y title.

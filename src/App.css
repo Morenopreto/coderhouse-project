@@ -1,19 +1,46 @@
-.App {
-  text-align: center;
-  /* background-color: rgba(245, 145, 30,0.1); */
-  background-color: rgba(	26, 26, 26,0.5);
-  height: auto;  
+
+@media (min-width: 916px){
+  .App {
+    text-align: center;
+    background-color: rgba(26, 26, 26, 0.5);
+    height: auto;
+  }
+
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+
 }
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media(max-width: 915px){
+  .App{
+    visibility: hidden;
+  }
+  .App::before{
+    position: absolute;
+    visibility: visible;
+    top: 30vh;
+    margin: 0 30vw;
+    width: 40vw;
+    text-align: center;
+    content: 'Page under construction for mobile use';
+    color: #1a1a1a;
+  }
+  .App::after{
+    position: absolute;
+    visibility: visible;
+    top: 35vh;
+    margin: 0 30vw;
+    width: 40vw;
+    text-align: center;
+    content: '#BESTBURGAINAMBA';
+    color: #1a1a1a;
+    font-size: 30px;
+  }
 }
-

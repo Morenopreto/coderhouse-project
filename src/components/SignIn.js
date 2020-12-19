@@ -1,6 +1,6 @@
 import { Form, Button, Modal } from 'react-bootstrap';
 import { CartContext } from '../context/cartContext';
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 
 function SignIn({ show, handleClose,setbuttonLabel }) {
 
@@ -16,8 +16,8 @@ function SignIn({ show, handleClose,setbuttonLabel }) {
       && !!document.getElementById('formBasicPassword').value
       ?
       setStatus(false) : setStatus(true);
-
   }
+  
   const submit = () => {
     setbuyerState({
       name: document.getElementById('formName').value,
@@ -81,25 +81,3 @@ function SignIn({ show, handleClose,setbuttonLabel }) {
 }
 export default SignIn;
 
-
-
-// return (
-//   <>
-//     <Button variant="primary" onClick={handleShow}>
-//       Launch demo modal
-//     </Button>
-
-
-//     
-//    
-//     <Modal.Footer>
-//       <Button variant="secondary" onClick={handleClose}>
-//         Close
-//         </Button>
-//       <Button variant="primary" onClick={handleClose}>
-//         Save Changes
-//         </Button>
-//     </Modal.Footer>
-
-//   </>
-// );

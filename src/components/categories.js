@@ -1,8 +1,8 @@
 
-import React, { useContext, useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import { CardDeck, Card } from 'react-bootstrap';
-import { ProductContext } from '../context/globalContext';
+import { ProductContext } from '../context/productContext';
 import NotFoundPage from '../components/NotFoundPage';
 import Loading from './loading';
 import './css/itemDetail.css';

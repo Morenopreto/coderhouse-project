@@ -2,45 +2,39 @@ import React, { useContext,useEffect } from 'react';
 import {useParams} from 'react-router-dom'
 import Item from './items';
 import Loading from './loading';
+import NotFoundPage from '../components/NotFoundPage';
 import './css/itemList.css';
 import { CardDeck } from 'react-bootstrap';
-import { ProductContext } from '../context/globalContext'
+import { ProductContext } from '../context/productContext'
 
 
 function ItemList() {
 
-    // const { lista } = useContext(ProductContext);
-
-    // const {id_categories} = useParams();
-    
-
-    // const { productoById, getById } = useContext(ProductContext);
+    const {id_categories} = useParams();
     const { getByCategorie, lista } = useContext(ProductContext);
 
-    // useEffect(() => {
-    //     getByCategorie(id_categories);
-    //     console.log('id_categories')
-    //     console.log(id_categories)
-    //     console.log('id_categories')
-    // }, [id_categories])
+    useEffect(() => {
+        getByCategorie(id_categories)
+    }, [id_categories])
 
 
 
-    if (!lista) {
+    if (lista === null) {
+        return <NotFoundPage />
+    }
+    else if (!lista) {
         return <div><Loading /></div>
     } else {
 
         return (
-            // <ul className="itemListUl">
             <CardDeck className='itemListUl'>
 
                 <h1>Productos</h1>
                 {lista?.map((producto, key) => (
-                    
+
                     (<Item key={key} lista={producto} id={producto.id} />)
                 ))}
             </CardDeck>
-            // {/* </ul> */}
         )
     }
 }

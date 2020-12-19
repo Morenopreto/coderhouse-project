@@ -1,6 +1,6 @@
 import { React, useState, useContext, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import { ProductContext } from '../context/globalContext';
+import { ProductContext } from '../context/productContext';
 import ItemDetail from './itemDetail';
 import Loading from './loading';
 import NotFoundPage from '../components/NotFoundPage';
@@ -10,7 +10,6 @@ import NotFoundPage from '../components/NotFoundPage';
 function ItemDetailContainer() {
 
     let { id_producto } = useParams();
-
     const [contador, setContador] = useState(0)
     const { productoById, getById } = useContext(ProductContext);
     

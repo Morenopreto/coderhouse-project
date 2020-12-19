@@ -1,101 +1,103 @@
-.carritoUl{
-    margin: 60px;
-    display: flex;
-    flex-flow: column wrap;
+.carritoUl {
+  margin: 60px;
+  display: flex;
+  flex-flow: column wrap;
 }
-.cardsCart{
-    width: 100% !important;
-    margin: 10px 0 !important;
-    flex-flow: row wrap !important;
-
+.cardsCart {
+  width: 100% !important;
+  margin: 10px 0 !important;
+  flex-flow: row wrap !important;
 }
-.tituloCart{
-    text-align: justify !important;
-    display: inline;
-    margin: 0 !important;
-    grid-column-start: 1;
-    grid-column-end: 4;
+.tituloCart {
+  text-align: justify !important;
+  display: inline;
+  margin: 0 !important;
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
-.imgCartSpan{
-    width: 12%;
-    height: 150px;
-    object-fit: cover;
-    background-color: #282c34;
-    overflow: hidden;
+.imgCartSpan {
+  width: 12%;
+  height: 150px;
+  object-fit: cover;
+  background-color: #282c34;
+  overflow: hidden;
 }
-.imgCart{
-    height: auto;
+.imgCart {
+  height: auto;
 }
-.trashCart{
-    text-align: end;
-    color: #e42528;
+.trashCart {
+  text-align: end;
+  color: #e42528;
 }
-.gridCart{
-    width: 88%;
-    display: grid;
-    grid-template: 25% 50% 25%/repeat(4,1fr);
+.gridCart {
+  width: 88%;
+  display: grid;
+  grid-template: 25% 50% 25% / repeat(4, 1fr);
 }
-.cartTextCart{
-    grid-column-start: 1;
-    grid-column-end: 5;
+.cartTextCart {
+  grid-column-start: 1;
+  grid-column-end: 5;
 }
-.priceCart{
-    grid-column-start: 4;
-    grid-column-end: 5;
-    font-weight: bold;
-    color: #1a1a1a;
-    text-align: end;
-    margin-right: 30px;
+.priceCart {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  font-weight: bold;
+  color: #1a1a1a;
+  text-align: end;
+  margin-right: 30px;
 }
-.buttonTrash{
-    margin-right:30px;
-    justify-self: end;
-    background: transparent;
-    width: 17px;
+.buttonTrash {
+  margin-right: 30px;
+  justify-self: end;
+  background: transparent;
+  width: 17px;
 }
-.buttonTrash:hover{
-    transform: scale(1.1);
+.buttonTrash:hover {
+  transform: scale(1.1);
 }
-.totalCard{
-    margin-left: 75.5%;
-    width: 20%;
-    border: none;
-    background-color: transparent;
-    color: black;
-    font-weight: bold;
-    flex-flow: row wrap;
+.totalCard {
+  margin-left: 75.5%;
+  width: 20%;
+  border: none;
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+  flex-flow: row wrap;
 }
-.botonComprar{
-    width: 100% !important;
+.botonComprar {
+  width: 100% !important;
 }
-.labelComprar{
-    width: 50%;
-    margin-bottom: 45px;
+.labelComprar {
+  width: 50%;
+  margin-bottom: 45px;
 }
-.spanCartNav{
-    width: 44px;
-    height: auto;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+.spanCartNav {
+  width: 44px;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
-.carritoDiv{
-    min-height: 68vh;
-    padding: 60px 0;
+.carritoDiv {
+  min-height: 68vh;
+  padding: 60px 0;
 }
-.muestraComprar{
-    display: block;
-    pointer-events: initial;
-    
+.muestraComprar {
+  display: block;
+  pointer-events: initial;
 }
-.ocultaComprar{
-    pointer-events: none;
-    visibility: hidden;
+.ocultaComprar {
+  pointer-events: none;
+  visibility: hidden;
 }
-.ocultaComprar::after{
-    position: absolute;
-    content: 'Registrate para comprar!';
-    visibility: visible;
-    width: 130px;
-    right: 5vw;
+.ocultaComprar::after {
+  position: absolute;
+  content: "Registrate para comprar!";
+  visibility: visible;
+  width: 130px;
+  right: 5vw;
+}
+.sad-Empty {
+  width: 25%;
+  margin: 0 37.5%;
 }

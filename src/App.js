@@ -2,16 +2,15 @@ import React from 'react';
 import './App.css';
 import NavBar from './components/navBar';
 import Carrousel from './components/carrousel'
-import Home from './components/home';
 import './components/css/general.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import ItemList from './components/itemList';
+import ProductList from './components/productList';
 import Footer from './components/footer';
 import Cart from './components/carrito';
 import ItemDetailContainer from './components/itemDetailContainer';
 import NotFoundPage from './components/NotFoundPage';
 import Categories from './components/categories';
-import ProductProvider from './context/globalContext'
+import ProductProvider from './context/productContext'
 import CartProvider from './context/cartContext'
 
 function App() {
@@ -31,7 +30,7 @@ function App() {
               {/* <Route path='/productos/:id_producto'><ItemDetailContainer /></Route> */}
               <Route path='/categories/:id_categories/:id_producto'><ItemDetailContainer /></Route>
 
-              <Route path='/categories/:id_categories'><ItemList /></Route>
+              <Route path='/categories/:id_categories'><ProductList /></Route>
 
               <Route path='/categories'><Categories /></Route>
 

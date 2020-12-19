@@ -20,7 +20,7 @@ const CartProvider = ({ children }) => {
 
     //METHODS PARA CARRITO
 
-    const addItem = (contador, name, id, price, descripcion,source) => {
+    const addItem = (contador, name, id, price, descripcion, source) => {
 
         if (!carritoState.length) {
             let newEntry = {
@@ -29,7 +29,7 @@ const CartProvider = ({ children }) => {
                 name: name,
                 price: price,
                 descripcion: descripcion,
-                source:source
+                source: source
             }
 
             setcarritoState([...carritoState, newEntry]);
@@ -49,13 +49,13 @@ const CartProvider = ({ children }) => {
                 name: name,
                 price: price,
                 descripcion: descripcion,
-                source:source
+                source: source
             }
 
             setcarritoState([...carritoState, newEntry]);
             actualizaQty(newEntry.count)
         }
-        
+
     };
     const sumaUno = (id) => {
         carritoState[carritoState.findIndex(item => item.id === id)].count += 1;
@@ -82,7 +82,7 @@ const CartProvider = ({ children }) => {
             }
 
             const newOrder = {
-                date:new Date(),
+                date: new Date(),
                 buyer: buyerInfo,
                 items: carritoState,
                 total: carritoState.reduce((total, prod) => total += (prod.price * prod.count), 0)

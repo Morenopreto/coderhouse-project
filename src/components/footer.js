@@ -5,7 +5,7 @@ import './css/footer.css'
     return (
         <footer className='footer'>
         <h5 >SEGUINOS</h5>
-        <a href="https://www.instagram.com/frodasburgers/" target="_blank"
+        <a href="https://www.instagram.com/frodasburgers/" target="_blank" rel="noreferrer"
           ><i  className="fab fa-instagram i-grid"></i
         ></a>
   

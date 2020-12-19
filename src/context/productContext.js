@@ -14,7 +14,6 @@ const ProductProvider = ({ children }) => {
 
 
     useEffect(() => {
-        
         categories
             .get()
             .then((res) => {
@@ -22,7 +21,6 @@ const ProductProvider = ({ children }) => {
                     console.log('No existe la coleccion')
                 } else {
                     setCategoriesState(res.docs.map(doc => ({ ...doc.data(), id: doc.id })));
-                    console.log(categoriesState)
                 }
             })
             .catch((err) => {

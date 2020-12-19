@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react';
 import logo from '../assets/logoRedoRojo.png';
 import CartIcon from './icons/cartIcon'
 import SignIn from './SignIn';
-import { NavLink,useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { CartContext } from '../context/cartContext';
-import { ProductContext } from '../context/globalContext';
+import { ProductContext } from '../context/productContext';
 import { Tooltip, OverlayTrigger } from 'react-bootstrap';
 import './css/navBar.css';
 
@@ -13,10 +13,8 @@ import './css/navBar.css';
 
 function NavBar() {
 
- 
-
   const { qty } = useContext(CartContext);
-  const { categoriesState,getByCategorie } = useContext(ProductContext);
+  const { categoriesState } = useContext(ProductContext);
 
   const [show, setShow] = useState(false);
   const [time, setTimeState] = useState(5000);
@@ -35,14 +33,12 @@ function NavBar() {
     <Tooltip id="button-tooltip" {...props}>
       <ul className='downHoverUl'>
         {categoriesState?.map((item, key) => (
-          // (<Item key={key} lista={item} id={item.id} />)
-          // (<Card className="item-div" onClick={() => getByCategorie(item.id)}>
           (
-            <NavLink className="downHover" to={{
+            <NavLink key={`${key}-Navlink`} className="downHover" to={{
               // pathname: `categories/${item.id}/${item.name}`
               pathname: `/categories/${item.id}`
             }}>
-              <li className='downHoverLi' onClick={() => {timeControl(); getByCategorie(item.id)}}>{item.name} </li>
+              <li key={`${key}-li`} className='downHoverLi' onClick={() => { timeControl() }}>{item.name} </li>
 
             </NavLink>
           )
