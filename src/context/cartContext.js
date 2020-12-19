@@ -87,6 +87,7 @@ const CartProvider = ({ children }) => {
                 items: carritoState,
                 total: carritoState.reduce((total, prod) => total += (prod.price * prod.count), 0)
             }
+            console.log(newOrder)
             try {
 
                 const { id } = await order.add(newOrder);
@@ -96,7 +97,7 @@ const CartProvider = ({ children }) => {
                 alert(`Gracias por su compra!`)
 
             } catch (err) {
-                console.log('Error')
+                console.log(err)
             }
 
         }

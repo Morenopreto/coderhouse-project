@@ -12,13 +12,13 @@ function ItemDetailContainer() {
     let { id_producto } = useParams();
     const [contador, setContador] = useState(0)
     const { productoById, getById } = useContext(ProductContext);
-    
+
     useEffect(() => {
         getById(id_producto);
     }, [])
 
     let sumar = () => {
-        
+
         if (contador === 0) {
             setContador(productoById.min)
         } else if (contador < productoById.stock) {
@@ -31,11 +31,11 @@ function ItemDetailContainer() {
             setContador(0);
         } else if (contador > productoById.min)
             setContador(contador - 1)
-        
+
 
     }
 
-        
+
     if(productoById===null){
         return <NotFoundPage/>
     }
@@ -43,7 +43,7 @@ function ItemDetailContainer() {
         return <div><Loading /></div>
     }
     else {
-        return (<ItemDetail disminuir={disminuir} sumar={sumar} descripcion={productoById.descripcion} stock={productoById.stock} min={0} contador={contador} name={productoById.title} price={productoById.price} source={productoById.detailSource} id={id_producto} setContador={setContador} />)
+        return (<ItemDetail disminuir={disminuir} sumar={sumar} descripcion={productoById.descripcion} stock={productoById.stock} min={0} contador={contador} name={productoById.title} price={productoById.price} detailSource={productoById.detailSource} source={productoById.source}  id={id_producto} setContador={setContador} />)
     }
 
 }
